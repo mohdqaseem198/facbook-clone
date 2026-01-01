@@ -1,6 +1,6 @@
 
 const RightHomeFriendReq = () => {
-    return(<div className="bg-white m-1 rounded-sm" id="right-home-friend-req">
+    return(<div className="bg-white rounded-sm" id="right-home-friend-req">
 
         <div className="p-2">
             <div className="flex flex-row justify-between ">

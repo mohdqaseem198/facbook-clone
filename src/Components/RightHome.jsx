@@ -5,7 +5,7 @@ import RightHomeAd from "./RightHomeAd";
 
 const RightHome = () => {
     return(<div className="" id="middle-home">
-            <div className="shadow-b">
+            <div className="my-2 mx-1 shadow-b">
                 <RightHomeFriendReq />
             </div>
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const LeftHomeProfile = () => {
     return(<div className="bg-white" id="left-home-profile">
@@ -7,7 +8,7 @@ const LeftHomeProfile = () => {
                 <img className="w-full h-full object-cover" src='https://images.pexels.com/photos/32838840/pexels-photo-32838840.jpeg' />
             </div>
 
-            <div className="absolute left-4/12 top-8/12 w-20 h-20 bg-white rounded-full">
+            <div className="m-auto absolute top-6/8 left-4/10 w-20 h-20 bg-white rounded-full">
                 <img className="w-full h-full object-cover rounded-full p-[1px]" src='https://images.pexels.com/photos/34141640/pexels-photo-34141640.jpeg' />
             </div>
         </div>
@@ -29,7 +30,9 @@ const LeftHomeProfile = () => {
             </div>
 
             <div className="mt-3">
-                <button className="cursor-pointer bg-blue-500 p-2 rounded-sm text-white font-bold">My Profile</button>
+                <Link href='/profile'>
+                    <button className="cursor-pointer bg-blue-500 p-2 rounded-sm text-white font-bold">My Profile</button>
+                </Link>
             </div>
 
         </div>

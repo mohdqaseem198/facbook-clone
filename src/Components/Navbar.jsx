@@ -1,6 +1,9 @@
 'use client'
 import { useState } from "react";
 import MobileNavbar from "../Components/MobileNavbar";
+import Link from "next/link";
+import { ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
 
@@ -9,7 +12,9 @@ const Navbar = () => {
 
         <div className="hidden sm:flex flex-row items-center justify-around py-5">
             <div>
-                <h1>MYSOCIAL</h1>
+                <Link href='/'>
+                  <h1>MYSOCIAL</h1>
+                </Link>
             </div>
 
             <div className="flex flex-row gap-2">
@@ -44,10 +49,34 @@ const Navbar = () => {
             </div>
 
             <div className="flex  items-center gap-2">
-                <div className="w-5 h-5 flex items-center justify-center">
+                <div className="w-6 h-6 flex items-center justify-center cursor-pointer">
                     <img className="h-full w-full object-contain" src="/people.png" />
                 </div>
-                <p>Login/Register</p>
+                {/* <p>Login/Register</p> */}
+                <ClerkLoading>
+                  loading
+                </ClerkLoading>
+
+                <ClerkLoaded>
+                  <SignedIn>
+
+                    <div className="cursor-pointer">
+                      <img src='messages.png' className="w-6 h-6"/>
+                    </div>
+
+                    <div className="cursor-pointer">
+                      <img src='notifications.png' className="w-6 h-6"/>
+                    </div>
+                    <UserButton/>
+                  </SignedIn>
+
+                  <SignedOut>
+                    <div className="cursor-pointer">
+                      <Link href='/sign-in'>Login/Register</Link>
+                    </div>
+                  </SignedOut>
+
+                </ClerkLoaded>
             </div>
 
         </div>

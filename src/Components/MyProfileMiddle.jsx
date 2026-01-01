@@ -1,0 +1,55 @@
+import MiddleFeed from './MiddleFeed';
+
+const MyProfileMiddle = () => {
+    return(<div className="p-2 bg-gray-100 rounded-sm" id="my-profile-middle">
+        <div className="relative px-2  flex">
+            <div className="  w-full h-[300px] overflow-hidden m-auto">
+                <img className="w-full rounded-sm h-full object-cover" src='https://images.pexels.com/photos/32838840/pexels-photo-32838840.jpeg'  />
+            </div>
+
+            <div className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-2/3 w-30 h-30 rounded-full overflow-hidden bg-white p-[2px]">
+                <img className="bg-white p-[1px] rounded-full w-full h-full object-cover" src='https://images.pexels.com/photos/34141640/pexels-photo-34141640.jpeg'  />
+            </div>
+        </div>
+
+        <div className='font-bold text-2xl mt-10'>
+            <p>Mary Siddiqui Ansari</p>
+        </div>
+
+        <div className='flex flex-row justify-center gap-[5%]'>
+            <div className=''>
+                <div className='font-bold'>
+                    142
+                </div>
+                <div>
+                    Posts
+                </div>
+            </div>
+
+            <div className=''>
+                <div className='font-bold'>
+                    1.2K
+                </div>
+                <div>
+                    Followers
+                </div>
+            </div>
+
+            <div className=''>
+                <div className='font-bold'>
+                    1.4K
+                </div>
+                <div>
+                    Following
+                </div>
+            </div>
+
+        </div>
+
+        <div className='p-2'>
+            <MiddleFeed />
+        </div>
+    </div>)
+};
+
+export default MyProfileMiddle;

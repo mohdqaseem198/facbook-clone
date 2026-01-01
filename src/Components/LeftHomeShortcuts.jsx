@@ -2,21 +2,21 @@
 const LeftHomeShortcuts = () => {
 
     const shortcuts  = [
-        {img: './posts.png', name : 'My Posts'},
-        {img: './activity.png', name : 'Activity'},
-        {img: './market.png', name : 'Marketplace'},
-        {img: './events.png', name : 'Events'},
-        {img: './albums.png', name : 'Album'},
-        {img: './videos.png', name : 'Videos'},
-        {img: './news.png', name : 'News'},
-        {img: './courses.png', name : 'Courses'},
-        {img: './lists.png', name : 'Lists'},
-        {img: './settings.png', name : 'Settings'},
+        {id : 1, img: './posts.png', name : 'My Posts' },
+        {id : 2, img: './activity.png', name : 'Activity' },
+        {id : 3, img: './market.png', name : 'Marketplace' },
+        {id : 4, img: './events.png', name : 'Events' },
+        {id : 5, img: './albums.png', name : 'Album' },
+        {id : 6, img: './videos.png', name : 'Videos' },
+        {id : 7, img: './news.png', name : 'News' },
+        {id : 8, img: './courses.png', name : 'Courses' },
+        {id : 9, img: './lists.png', name : 'Lists' },
+        {id : 10, img: './settings.png', name : 'Settings' },
     ]
 
     return(<div className="bg-white rounded-sm" id="left-home-shortcuts">
         {shortcuts.map((single) => {
-            return <div className="flex flex-row hover:bg-gray-100 rounded-sm justify-left items-center my-1">
+            return <div key={single.id} className="flex flex-row hover:bg-gray-100 rounded-sm justify-left items-center my-1">
                 <div className=" p-5">
                     <img className="w-6 h-6" src={single.img} />
                 </div>
