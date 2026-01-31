@@ -1,6 +1,19 @@
+"use client";
 import Link from "next/link";
 
-const LeftHomeProfile = () => {
+
+const LeftHomeProfile = ({user}) => {
+
+    const {id, username, createdAt, _count} = user || {};
+    const {followers} = _count || 0;
+    try {
+        console.log('from profile' , user);
+    }
+    catch(err){
+        console.log(err, 'from leftHomeProfile');
+    }
+
+
     return(<div className="bg-white" id="left-home-profile">
         <div className="p-2 shadow-2xl rounded-2xl my-2">
         <div className="relative w-full">
@@ -15,7 +28,7 @@ const LeftHomeProfile = () => {
 
         <div className="mt-8">
             <div>
-                <p className="text-2xl font-bold">Mary Siddiqui Ansari</p>
+                <p className="text-2xl font-bold"> {username || 'Mary Siddiqui Ansari'}</p>
             </div>
             <div className="flex flex-row justify-around mt-3">
                 <div className="flex flex-row">
@@ -25,14 +38,17 @@ const LeftHomeProfile = () => {
                 </div>
 
                 <div>
-                    <p>1000 followers</p>
+                    <p>{followers} followers</p>
                 </div>
             </div>
 
             <div className="mt-3">
-                <Link href='/profile'>
+                {/* <Link href={`/profile/id?id=${id}`}> */}
+                <Link href={`/profile/${id}`}>
                     <button className="cursor-pointer bg-blue-500 p-2 rounded-sm text-white font-bold">My Profile</button>
                 </Link>
+
+                
             </div>
 
         </div>

@@ -1,6 +1,9 @@
 import MiddleFeed from './MiddleFeed';
 
-const MyProfileMiddle = () => {
+const MyProfileMiddle = ({user}) => {
+
+    console.log('my profile middle ', user);
+
     return(<div className="p-2 bg-gray-100 rounded-sm" id="my-profile-middle">
         <div className="relative px-2  flex">
             <div className="  w-full h-[300px] overflow-hidden m-auto">
@@ -13,13 +16,13 @@ const MyProfileMiddle = () => {
         </div>
 
         <div className='font-bold text-2xl mt-10'>
-            <p>Mary Siddiqui Ansari</p>
+            <p>{user?.username || 'error' }</p>
         </div>
 
         <div className='flex flex-row justify-center gap-[5%]'>
             <div className=''>
                 <div className='font-bold'>
-                    142
+                    {`${user?._count.posts ?  user._count.posts : '0' }`}
                 </div>
                 <div>
                     Posts
@@ -28,7 +31,7 @@ const MyProfileMiddle = () => {
 
             <div className=''>
                 <div className='font-bold'>
-                    1.2K
+                    {`${user?._count.followers ?  user._count.followers : '0' }`}
                 </div>
                 <div>
                     Followers
@@ -37,7 +40,7 @@ const MyProfileMiddle = () => {
 
             <div className=''>
                 <div className='font-bold'>
-                    1.4K
+                    {`${user?._count.followings ?  user._count.followings : '0' }`}
                 </div>
                 <div>
                     Following
@@ -47,7 +50,7 @@ const MyProfileMiddle = () => {
         </div>
 
         <div className='p-2'>
-            <MiddleFeed />
+            <MiddleFeed username={user?.username} />
         </div>
     </div>)
 };
