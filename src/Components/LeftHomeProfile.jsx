@@ -12,8 +12,7 @@ const LeftHomeProfile = ({user}) => {
     catch(err){
         console.log(err, 'from leftHomeProfile');
     }
-
-
+    
     return(<div className="bg-white" id="left-home-profile">
         <div className="p-2 shadow-2xl rounded-2xl my-2">
         <div className="relative w-full">

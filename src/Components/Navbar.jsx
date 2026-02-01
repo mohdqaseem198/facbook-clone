@@ -88,7 +88,7 @@ const Navbar = () => {
                 <div className={`absolute left-0 top-1/2 h-1 w-6 transition-all duration-500 bg-black ${isOpen ? '-rotate-45' : 'translate-y-2'} `}></div>
             </div>
 
-            <div className={`absolute top-2 transition-all duration-700  my-5 ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+            <div className={`z-10  absolute top-2 transition-all duration-700  my-5 ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
                     <MobileNavbar />
             </div>
         </div>

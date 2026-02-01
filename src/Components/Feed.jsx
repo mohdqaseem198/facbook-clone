@@ -1,6 +1,7 @@
 import FeedDeletePost from "./InteractionFolder/FeedDeletePost";
 import PostLikeInteraction from "./InteractionFolder/PostLikeInteraction";
 import CommentsInThisPost from "../Components/InteractionFolder/CommentsInThisPost";
+import Link from "next/link";
 
 const Feed = (Posts) => {
 
@@ -19,14 +20,16 @@ const Feed = (Posts) => {
         <div className="bg-white rounded-sm" id="middle-feed">
 
         <div className="flex flex-row justify-between items-center p-3">
-            <div className="flex flex-row justify-left items-center gap-2">
-                <div className=" w-10 h-10 m-1 overflow-hidden rounded-full ">
-                    <img className="w-full h-full object-cover" src={Posts?.username?.img} />
+            <Link href={`/profile/${Posts?.username?.user?.id}`}>
+                <div className="flex flex-row justify-left items-center gap-2">
+                    <div className=" w-10 h-10 m-1 overflow-hidden rounded-full ">
+                        <img className="w-full h-full object-cover" src={Posts?.username?.img} />
+                    </div>
+                    <div className="font-bold">
+                        <p>{Posts?.username?.user?.username}</p>
+                    </div>
                 </div>
-                <div className="font-bold">
-                    <p>{Posts?.username?.user?.username}</p>
-                </div>
-            </div>
+            </Link>
 
             <div className="w-20 h-5">
                 <FeedDeletePost id={Posts?.username?.id} />
@@ -34,9 +37,10 @@ const Feed = (Posts) => {
         </div>
 
         <div className="p-3">
-            <div>
-                <img className="rounded-sm" src={Posts?.username?.user?.cover} />
+            <div className="  w-full h-[300px] overflow-hidden m-auto">
+                <img className="w-full rounded-sm h-full object-cover" src={Posts?.username?.user?.cover}  />
             </div>
+            {/*  */}
             <div className="text-left my-3">
                 <p>{Posts?.username?.desc}</p>
             </div>

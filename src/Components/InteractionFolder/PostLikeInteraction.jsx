@@ -32,13 +32,15 @@ const PostLikeInteraction = ({postId, userId, comment, Liked }) => {
         </div>
 
         <div className="">
-            <form className="" action={createComment}>
-                <input type="text" name="comment" placeholder="let me know about post" className="border rounded-md border-black outline-none p-2 placeholder:text-gray-600" />
-                <input type="hidden" name="userId" value={userId} />
-                <input type="hidden" name="postId" value={postId} />
-                <button className="cursor-pointer mx-6 ">
-                    Comment
-                </button>
+            <form className="mb-1" action={createComment}>
+                <div className="h-12 border border-black rounded-2xl">
+                    <input type="text" name="comment" className="rounded-md outline-none p-2 placeholder:text-gray-600" placeholder="let me know about post"/>
+                    <input type="hidden" name="userId" value={userId} />
+                    <input type="hidden" name="postId" value={postId} />
+                    <button className="h-full cursor-pointer bg-gray-300 p-1 rounded-r-2xl">
+                        Comment
+                    </button>
+                    </div>
             </form>
         </div>
 

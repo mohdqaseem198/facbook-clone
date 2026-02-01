@@ -82,8 +82,6 @@ const MiddleFeed = async(username) => {
     ) : (
       <p>No posts found</p>
     );
-
-
 };
 
 export default MiddleFeed;

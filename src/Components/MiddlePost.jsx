@@ -14,7 +14,7 @@ const MiddlePost = () => {
             </div>
 
             <div className="bg-gray-100 w-[75%] h-16 my-3 rounded-md">
-                <input name="desc" className="w-full outline-none p-2" placeholder="What's on yout mind?" type= 'text' />
+                <input name="desc" className="w-full outline-none p-2" placeholder="What's in your mind?" type= 'text' />
             </div>
             <button type="submit" className="cursor-pointer">
                 <div className="w-6 h-6 overflow-hidden">
